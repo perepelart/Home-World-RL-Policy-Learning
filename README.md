@@ -39,7 +39,7 @@ This project simulates a decision-making agent in the **Home World** environment
 * **`agent_tabular.py`**
   Standard **tabular Q-learning** agent that maintains a Q-table for all state-action pairs.
 
-  Note that each agent is fully self-contained, i.e., can be trained and evaluated independently when run.
+Note that each agent is fully self-contained, i.e., can be trained and evaluated independently when run.
 
 ### Environment
 
