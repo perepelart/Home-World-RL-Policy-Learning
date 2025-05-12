@@ -1,5 +1,7 @@
 # Home-World-Policy-Learning
 
+## Project Description.
+
 This project was done as a part of the course [MITx 6.86x Machine Learning with Python-From Linear Models to Deep Learning](https://www.edx.org/learn/machine-learning/massachusetts-institute-of-technology-machine-learning-with-python-from-linear-models-to-deep-learning).
 
 In this project, we address the task of learning control policies for text-based games using reinforcement learning. In these games, all interactions between players and the virtual world are through text. The current world state is described by elaborate text, and the underlying state is not directly observable. Players read descriptions of the state and respond with natural language commands to take actions.
@@ -19,3 +21,37 @@ This project requires to complete the following tasks:
 3. Implement a <b>deep Q-network</b>.
 
 4. Use Q-learning algorithms on the Home World game.
+
+---
+
+## Project Structure
+
+This project simulates a decision-making agent in the **Home World** environment using various reinforcement learning algorithms. Below is a description of the key components:
+
+### Agents
+
+* **`agent_dqn.py`**
+  Implementation of a **Deep Q-Network (DQN)** using a neural network to approximate the Q-function.
+
+* **`agent_linear.py`**
+  Implements **Q-learning** with a **linear function approximator**.
+
+* **`agent_tabular_ql.py`**
+  Standard **tabular Q-learning** agent that maintains a Q-table for all state-action pairs.
+
+### Environment
+
+* **`framework.py`**
+  Core simulator for the **Home World** environment, defining state transitions, rewards, and dynamics.
+
+* **`game.tsv`**
+  Example game instructions that define quests and room descriptions used during simulation.
+
+### Main Logic & Utilities
+
+* **`main.py`**
+  Entry point of the project — runs training and evaluation experiments using different agents.
+
+* **`utils.py`**
+  Auxiliary functions used across agents and the framework (e.g., plotting, data formatting).
+
