@@ -53,5 +53,5 @@ This project simulates a decision-making agent in the **Home World** environment
   Entry point of the project — runs training and evaluation experiments using different agents.
 
 * **`utils.py`**
-  Auxiliary functions used across agents and the framework (e.g., plotting, data formatting).
+  Auxiliary functions used across agents and the framework (e.g., data formatting).
 
