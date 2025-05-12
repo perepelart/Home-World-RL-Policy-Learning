@@ -14,12 +14,12 @@ Parameters specific to the learning algorithm are listed below, along with commo
 | Parameter                   | Tabular QL      | Linear QL           | DQN              |
 |----------------------------|------------------|----------------------|------------------|
 | **Learning Rate ($\alpha$)**      | $0.1$      | $0.01$                 | $0.1$      |
-| **Training Epsilon ($\epsilon_{\text{train}}$)** | $0.5$              | $0.5$                  | $0.5$              |
+| **Training Epsilon ($\varepsilon_{\text{train}}$)** | $0.5$              | $0.5$                  | $0.5$              |
 | **Number of Epochs**       | $200$              | $600$                  | $300$              |
 | **Hidden Layer Size**      | —              | —                  | $128$              |
 | **Optimizer**              | —              | —                  | $\mathrm{SGD}$              |
 | **Common Parameters**      |                  |                      |                  |
 | **Discount Factor ($\gamma$)**    | $0.5$              | $0.5$                  | $0.5$              |
-| **Testing Epsilon ($\epsilon_{\text{test}}$)**  | $0.05$             | $0.05$                 | $0.05$             |
+| **Testing Epsilon ($\varepsilon_{\text{test}}$)**  | $0.05$             | $0.05$                 | $0.05$             |
 | **Training Episodes/Epoch**| $25$               | $25$                   | $25$               |
 | **Testing Episodes/Epoch** | $50$               | $50$                   | $50$               |
