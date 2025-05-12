@@ -6,12 +6,11 @@ In this project, we will consider a text-based game represented by the tuple $<H
 
 We conduct experiments on a small Home World, which mimic the environment of a typical house. The world consists of four rooms: a living room, a bed room, a kitchen and a garden with connecting pathways (illustrated in figure below). Transitions between the rooms are deterministic. Each room contains a representative object that the player can interact with. For instance, the living room has a TV that the player can watch , and the kitchen has an apple that the player can eat. Each room has several descriptions, invoked randomly on each visit by the player.
 
+**<p align="center">Figure: Rooms and objects in the Home world with connecting pathways</p>**
 <p align="center">
-  <span style="display:block; font-weight:bold; margin-bottom:5px;">Rooms and objects in the Home world with connecting pathways</span>
-
-  
   <img src="images/images_homeworld.jpg" />
 </p>
+
 
 <div align="center">
 
