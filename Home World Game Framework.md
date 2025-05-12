@@ -55,16 +55,24 @@ $$
 
 We emphasize that the hidden state $h_0, \ldots, h_T$ are unobservable to the player.
 
-The learning goal of the player is to find a policy that $\pi : S \rightarrow C$ that maximizes the expected cumulative discounted reward  
+The learning goal of the player is to find a policy that $\pi : S \rightarrow C$ that maximizes the expected cumulative discounted reward 
+
 $$
-\mathbb{E} \left[ \sum_{t=0}^{\infty} \gamma^t R(h_t, a_t, b_t) \mid (a_t, b_t) \sim \pi \right],
+\mathbb{E}\left[\sum_{t=0}^{\infty}\gamma^{t}R(h_{t},a_{t},b_{t})\mid(a_{t},b_{t}) \sim \pi \right]
 $$
+
 where the expectation accounts for all randomness in the model and the player. Let $\pi^*$ denote the optimal policy. For each observable state $s \in S$, let $\hat{h}(s)$ be the associated hidden state. The optimal expected reward achievable is defined as
 
 $$
 V^* = \mathbb{E}_{h_0, \Gamma_0, s_0 \sim \psi(h)} \left[ V^*(s) \right]
 $$
 
+
+where
+
+$$
+V^*(s) = \max_{\pi} \mathbb{E} \left[ \sum_{t=0}^{\infty} \gamma^t R(h_t, a_t, b_t) \mid h_0 = \hat{h}(s), s_0 = s, (a_t, b_t) \sim \pi \right].
+$$
 
 We can define the optimal Q-function as
 
@@ -75,8 +83,9 @@ $$
 Note that given $Q^*(s, a, b)$, we can obtain an optimal policy:
 
 $$
-\pi^*(s) = \operatorname{argmax}_{(a, b) \in C}  Q^*(s, a, b).
+\pi^\*(s)=\mathrm{argmax}_{(a, b) \in C}Q^\*(s, a, b)
 $$
+
 
 The commands set $C$ contains all *(action, object)* pairs. Note that some commands are invalid. For instance, *(eat, TV)* is invalid for any state, and *(eat, apple)* is valid only when the player is in the kitchen (i.e., $h_r$ corresponds to the index of kitchen). When an invalid command is taken, the system state remains unchanged and a negative reward is incurred.
 
@@ -84,9 +93,40 @@ Recall that there are **four** rooms in this game. Assume that there are **four*
 
 Note that in this game, the transition between states is deterministic. Since the player is placed at a random room and provided a randomly selected quest at the beginning of each episode, the distribution $\Gamma_0$ of the initial state $h_0$ is uniform over the hidden state space $H$.
 
-
-where
+In our framework, **episodic reward** is equal to
 
 $$
-V^*(s) = \max_{\pi} \mathbb{E} \left[ \sum_{t=0}^{\infty} \gamma^t R(h_t, a_t, b_t) \mid h_0 = \hat{h}(s), s_0 = s, (a_t, b_t) \sim \pi \right].
+\sum_{t=0}^{T} \gamma^t R(h_t, a_t, b_t)
 $$
+
+While the relation between $Q^{\*}$ and $V^\*$ can be written as
+
+$$
+Q^{\*}(s,a,b)=R(s,a,b)+\gamma\mathbb{E}\left[V^{\*}(s_{1})\mid h_{0}=h(s),s_{0}=s,a_{0}=a,b_{0}=b\right]
+$$
+
+We also compute the **expected optimal reward** for each episode $\mathbb{E}[V^{\*}(h_{0})]$, where $V^{\*}(h_{0})$ is the optimal value function for an initial state $h_0$, i.e.,
+
+$$
+V^{\*}(h_{0})=\mathbb{E}\bigg[\sum_{t=0}^{\infty }\gamma^{t}R(h_{t},a_{t},b_{t})|h_0, \pi ^{*}\bigg]
+$$
+
+As at the beginning of each game episode, the player is placed in a random room and provided with a randomly selected quest, the initial state $h_0$ is uniformly distributed in the state space $H={(r,q): 0\leq r\leq 3, 0\leq q\leq 3}$.  In other words, there are four quests each mapping to a unique room. We assume that the discounted factor is $\gamma = 0.5$ and that the reward function $R(s,a,b)$ is given in Table 1.
+
+We can categorize the states $S = \{(s_r, s_q)\}$ into three types:
+
+1. The quest $s_q$ requests a command in the initial room with description $s_r$. An example of such initial states is **(This room has a fridge, oven, and a sink; you are hungry)**. The optimal policy for such a state is to take the corresponding command to finish the quest and get a reward $1$.
+
+2. The quest $s_q$ requests a command in a room next to the initial room with description $s_r$. An example is **(This area has a bed, desk and a dresser; you are hungry)**. The optimal policy for such a state is first take one step towards the goal room (e.g., *go west*, and get a penalty reward $-0.01$), and then take the corresponding command to finish the quest (e.g., *eat apple*, and get a positive reward $1$). The total discounted reward is: 
+$-0.01 + \gamma \times 1 = 0.49$.
+
+3. The quest $s_q$ requests a command in a room that is not next to the initial room with description $s_r$, for instance, **(You have arrived at the garden. You can exercise here; you are hungry)**. It is easy to see that the optimal policy would be taking the first steps to arrive at the quested room and then finishing the quest. The total discounted reward would be: 
+$-0.01 + \gamma \times (-0.01) + \gamma^2 \times 1 = 0.235$.
+
+Since the room and the quest are selected randomly for the initial state, the probabilities for the above three types of states are $\frac{1}{4}, \frac{1}{2}, \frac{1}{4}$ respectively. Therefore,
+
+$$
+\mathbb{E}[V^*(h_0)] = \frac{1}{4} \times 1 + \frac{1}{2} \times 0.49 + \frac{1}{4} \times 0.235 = 0.55375.
+$$
+
+
