@@ -1,8 +1,8 @@
 # Home-World-Policy-Learning
 
-## Project Description.
-
 This work was done as a part of the course [MITx 6.86x Machine Learning with Python-From Linear Models to Deep Learning](https://www.edx.org/learn/machine-learning/massachusetts-institute-of-technology-machine-learning-with-python-from-linear-models-to-deep-learning).
+
+## Project Description.
 
 This project investigates training agents via reinforcement learning (RL) for text-based games, environments where all interactions — state descriptions and player actions — are text-based. Consequently, the underlying world state is only partially observable through these textual descriptions.
 
