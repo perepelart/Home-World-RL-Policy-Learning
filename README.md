@@ -6,7 +6,7 @@ This project was done as a part of the course [MITx 6.86x Machine Learning with 
 
 We are applying reinforcement learning (RL) to teach agents how to play text-based games. These games rely entirely on text for interaction—players read descriptions and type commands, meaning the true state is only partially observed.
 
-Our experiments use a simple "Home World," a house environment where agents complete text quests (e.g., "You are hungry") by interacting with objects (like eating an apple in the kitchen). The agent receives text descriptions, issues commands, and gets rewards.
+Our experiments use a simple "Home World", a house environment where agents complete text quests (e.g., "You are hungry") by interacting with objects (like eating an apple in the kitchen). The agent receives text descriptions, issues commands, and gets rewards.
 
 Using RL, we aim to develop an agent that learns optimal strategies from these rewards. A core problem is representing the text descriptions as vectors. While assigning unique IDs is simple, it doesn't scale well, leading us to investigate methods like bag-of-words.
 
