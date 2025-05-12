@@ -10,7 +10,7 @@ We conduct experiments on a small Home World, which mimic the environment of a t
   <span style="display:block; font-weight:bold; margin-bottom:5px;">Rooms and objects in the Home world with connecting pathways</span>
 
   
-  <img src="Images/images_homeworld.jpg" />
+  <img src="images/images_homeworld.jpg" />
 </p>
 
 <div align="center">
