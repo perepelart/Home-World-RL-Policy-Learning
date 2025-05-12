@@ -4,11 +4,11 @@
 
 This project was done as a part of the course [MITx 6.86x Machine Learning with Python-From Linear Models to Deep Learning](https://www.edx.org/learn/machine-learning/massachusetts-institute-of-technology-machine-learning-with-python-from-linear-models-to-deep-learning).
 
-We are applying reinforcement learning (RL) to teach agents how to play text-based games. These games rely entirely on text for interaction—players read descriptions and type commands, meaning the true state is only partially observed.
+This project investigates training agents via reinforcement learning (RL) for text-based games, environments where all interactions — state descriptions and player actions — are text-based. Consequently, the underlying world state is only partially observable through these textual descriptions.
 
-Our experiments use a simple "Home World", a house environment where agents complete text quests (e.g., "You are hungry") by interacting with objects (like eating an apple in the kitchen). The agent receives text descriptions, issues commands, and gets rewards.
+Our experimental setup features a small "Home World", simulating a house with rooms and interactable objects (e.g., a kitchen apple). The agent must fulfill quests presented textually, such as "You are hungry," which requires appropriate navigation and actions (e.g., going to the kitchen to eat the apple). In each cycle, the agent receives text describing the current state and quest, submits a command, and receives a reward.
 
-Using RL, we aim to develop an agent that learns optimal strategies from these rewards. A core problem is representing the text descriptions as vectors. While assigning unique IDs is simple, it doesn't scale well, leading us to investigate methods like bag-of-words.
+We employ an RL framework to develop an autonomous agent that learns effective command policies from game rewards. A critical challenge is the state representation: converting textual descriptions into vectors. A naive approach mapping each unique text to an index is infeasible for complex games, necessitating alternatives like bag-of-words representations.
 
 The mathematical model for this framework is described in the file [Home World Game Framework.md](https://github.com/perepelart/Home-World-Policy-Learning/blob/167907f70361518aff5ff762558ba9d9dd871c3b/Home%20World%20Game%20Framework.md)
 
