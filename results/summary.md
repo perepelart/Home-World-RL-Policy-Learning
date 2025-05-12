@@ -1,4 +1,4 @@
-[The image](results/rewards_by_agent_comparison.png) ([an interactive version](results/interactive_plot.html) is also available, which should be downloaded and opened in a browser) shows a comparison of the average episodic rewards obtained in the Home World environment by executing policies learned through Standard Tabular Q-learning, Q-learning with a Linear Function Approximaton, and Deep Q-Network (DQN) learning.
+[The image](rewards_by_agent_comparison.png) ([an interactive version](interactive_plot.html) is also available, which should be downloaded and opened in a browser) shows a comparison of the average episodic rewards obtained in the Home World environment by executing policies learned through Standard Tabular Q-learning, Q-learning with a Linear Function Approximaton, and Deep Q-Network (DQN) learning.
 
 
 | Algorithm                                  | Average Episodic Reward |
