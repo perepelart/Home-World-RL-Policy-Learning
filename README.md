@@ -57,3 +57,6 @@ This project simulates a decision-making agent in the **Home World** environment
 * **`utils.py`**
   Auxiliary functions used across agents and the framework (e.g., data formatting).
 
+### Results
+
+Experimental results can be found in [the following file](results/summary.md).
