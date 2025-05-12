@@ -30,31 +30,31 @@ This project simulates a decision-making agent in the **Home World** environment
 
 ### Agents
 
-* **`agent_dqn.py`**
+* [**`agent_dqn.py`**](agent_dqn.py)
   Implementation of a **Deep Q-Network (DQN)** using a neural network to approximate the Q-function.
 
-* **`agent_linear.py`**
+* [**`agent_linear.py`**](agent_linear.py)
   Implements **Q-learning** with a **linear function approximator**.
 
-* **`agent_tabular.py`**
+* [**`agent_tabular.py`**](agent_tabular.py)
   Standard **tabular Q-learning** agent that maintains a Q-table for all state-action pairs.
 
 Note that each agent is fully self-contained, i.e., can be trained and evaluated independently when run.
 
 ### Environment
 
-* **`framework.py`**
+* [**`framework.py`**](framework.py)
   Core simulator for the **Home World** environment, defining state transitions, rewards, and dynamics.
 
-* **`game.tsv`**
+* [**`game.tsv`**](game.tsv)
   Example game instructions that define quests and room descriptions used during simulation.
 
 ### Main Logic & Utilities
 
-* **`main.py`**
+* [**`main.py`**](main.py)
   Entry point of the project — runs training and evaluation experiments using different agents.
 
-* **`utils.py`**
+* [**`utils.py`**](utils.py)
   Auxiliary functions used across agents and the framework (e.g., data formatting).
 
 ### Results
