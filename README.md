@@ -59,4 +59,4 @@ Note that each agent is fully self-contained, i.e., can be trained and evaluated
 
 ### Results
 
-Experimental results can be found in [the following file](results/summary.md).
+Experimental results can be found in [**`summary.md`**](results/summary.md).
