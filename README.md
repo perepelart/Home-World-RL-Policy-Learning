@@ -1,4 +1,4 @@
-# Home-World-Policy-Learning
+# Home World: RL-Based Policy Learning.
 
 This work was done as a part of the course [MITx 6.86x Machine Learning with Python-From Linear Models to Deep Learning](https://www.edx.org/learn/machine-learning/massachusetts-institute-of-technology-machine-learning-with-python-from-linear-models-to-deep-learning).
 
