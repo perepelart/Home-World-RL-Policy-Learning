@@ -4,23 +4,25 @@ This work was done as a part of the course [MITx 6.86x Machine Learning with Pyt
 
 ## Project Description.
 
-This project investigates training agents via reinforcement learning (RL) for text-based games, environments where all interactions — state descriptions and player actions — are text-based. Consequently, the underlying world state is only partially observable through these textual descriptions.
+In this project, we use reinforcement learning (RL) to train agents to solve text-based games by learning control policies. In such games, all interactions — state descriptions and agent actions — are written in natural language, so the underlying world state is only partially observable through these textual descriptions.
 
-Our experimental setup features a small "Home World", simulating a house with rooms and interactable objects (e.g., a kitchen apple). The agent must fulfill quests presented textually, such as "You are hungry," which requires appropriate navigation and actions (e.g., going to the kitchen to eat the apple). In each cycle, the agent receives text describing the current state and quest, submits a command, and receives a reward.
+To conduct the experiments, we employ a small "Home World", simulating a house with four connected rooms containing interactive objects. The agent must complete quests presented textually that involve interacting with these objects. We assume that if the agent is already in the room associated with the quest, they can complete it by doing exactly one action. In each cycle, the agent receives a text describing the current state and quest, submits a command, and receives a reward based on the resulting state and the command.
 
-We employ an RL framework to develop an autonomous agent that learns effective command policies from game rewards. A critical challenge is the state representation: converting textual descriptions into vectors. A naive approach mapping each unique text to an index is infeasible for complex games, necessitating alternatives like bag-of-words representations.
+For instance, the *kitchen* contains an *apple* that the agent can eat. The agent may receive a quest such as *You are hungry*, which requires navigating through the house to reach the kitchen and consume the apple. The apple can be consumed directly without additional preparation, such as slicing.
 
-The mathematical model for this framework is described in the file [Home World Game Framework.md](https://github.com/perepelart/Home-World-Policy-Learning/blob/167907f70361518aff5ff762558ba9d9dd871c3b/Home%20World%20Game%20Framework.md)
+To design an autonomous game player, we leverage a reinforcement learning framework to learn command policies using game rewards as feedback. One challenge is mapping textual descriptions into vector representations. We first test a naive one-hot encoding by assigning a unique index to each text state. However, this approach becomes impractical as the number of distinct descriptions grows. We therefore also explore a bag-of-words representation.
 
-This project requires to complete the following tasks:
+Details of the mathematical model for this framework are provided in [**`Home World Game Framework.md`**](https://github.com/perepelart/Home-World-Policy-Learning/blob/167907f70361518aff5ff762558ba9d9dd871c3b/Home%20World%20Game%20Framework.md)
 
-1. Implement the <b> tabular Q-learning algorithm </b> for a simple setting where each text description is associated with a unique index.
+This project involves completing the following tasks:
 
-2. Implement the <b> Q-learning algorithm with linear approximation architecture </b>, using bag-of-words representation for textual state description.
+1. Implement the <b> tabular Q-learning algorithm </b> using one-hot encoding of text description.
+
+2. Implement the <b> Q-learning algorithm with linear approximation</b>, using a bag-of-words representation for textual state description.
 
 3. Implement a <b>deep Q-network</b>.
 
-4. Use Q-learning algorithms on the Home World game.
+4. **Apply** the Q-learning algorithms to the Home World game and **compare** the results.
 
 ---
 
