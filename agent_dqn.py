@@ -249,7 +249,7 @@ class DeepQLAgent:
 
 if __name__ == '__main__':
     # Constants for standalone testing
-    NUM_RUNS_MAIN = 5 # Use a different name
+    NUM_RUNS_MAIN = 5
 
     # Load data and create dictionary
     state_texts_main = utils.load_data('game.tsv')
