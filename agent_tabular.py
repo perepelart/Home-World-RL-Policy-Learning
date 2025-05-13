@@ -205,7 +205,7 @@ class TabularQLAgent:
 
 if __name__ == '__main__':
     # Constants for standalone testing
-    NUM_RUNS_MAIN = 5 # Use a different name to avoid conflict if imported
+    NUM_RUNS_MAIN = 5
 
     # Load game data and create state dictionaries
     framework.load_game_data()
