@@ -50,6 +50,8 @@ Note that each agent is fully self-contained, i.e., can be trained and evaluated
 
 * [**`game.tsv`**](game.tsv)
   Example game instructions that define quests and room descriptions used during simulation.
+  
+These two files should be used either with **`main.py`** or one of the agents for their evaluation.
 
 ### Main Logic & Utilities
 
