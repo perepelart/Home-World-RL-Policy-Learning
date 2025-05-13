@@ -120,6 +120,7 @@ class LinearQLAgent:
         Returns:
             float or None: Cumulative discounted reward if not training, else None.
         """
+        
         epsilon = self.training_ep if for_training else self.testing_ep
         rewards_list = []
         (current_room_desc, current_quest_desc, terminal) = framework.newGame()
